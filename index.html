@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snippet Vault BD — Offline Code Snippet Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>Snippet Vault BD</h1>
+    <p id="tagline"></p>
+  </div>
+  <button id="langBtn" type="button">Bangla</button>
+</header>
+<main>
+  <section class="panel">
+    <h2 id="formTitle"></h2>
+    <form id="snippetForm" novalidate>
+      <label for="fTitle"></label>
+      <input id="fTitle" maxlength="100" autocomplete="off">
+      <label for="fLang"></label>
+      <select id="fLang"></select>
+      <label for="fCode"></label>
+      <textarea id="fCode" rows="8" spellcheck="false" placeholder="paste your code here"></textarea>
+      <label for="fDesc"></label>
+      <input id="fDesc" maxlength="500" autocomplete="off">
+      <label for="fTags"></label>
+      <input id="fTags" autocomplete="off" placeholder="e.g. sorting, array">
+      <div class="form-actions">
+        <button id="saveBtn" type="submit"></button>
+        <button id="cancelBtn" type="button"></button>
+      </div>
+    </form>
+    <p id="msg" class="msg" style="display:none"></p>
+  </section>
+
+  <section class="panel">
+    <div class="filters">
+      <input id="searchInput" type="search" autocomplete="off">
+      <select id="langFilter"><option value="All"></option></select>
+      <select id="tagFilter"></select>
+      <select id="sortSel">
+        <option value="newest"></option>
+        <option value="oldest"></option>
+        <option value="title"></option>
+      </select>
+      <label class="check"><input id="favOnly" type="checkbox"> <span id="favLabel"></span></label>
+    </div>
+    <div class="toolbar">
+      <p id="stats"></p>
+      <div>
+        <button id="exportBtn" type="button"></button>
+        <button id="importBtn" type="button"></button>
+        <button id="clearBtn" type="button"></button>
+        <input id="fileInput" type="file" accept=".json,application/json" hidden>
+      </div>
+    </div>
+    <div id="list"></div>
+  </section>
+  <footer><p id="footerText"></p></footer>
+</main>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
